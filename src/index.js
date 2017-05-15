@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import RootContainer from './components/RootContainer';
 import dotenv from 'dotenv';
 import * as firebase from 'firebase';
 
@@ -18,6 +18,6 @@ const config = {
 firebase.initializeApp(config);
 
 ReactDOM.render(
-  <App />,
+  <RootContainer />,
   document.getElementById('root')
 );
