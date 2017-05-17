@@ -1,6 +1,7 @@
 import axios from 'axios';
 import dotenv from 'dotenv';
 import dispatcher from '../dispatcher/Dispatcher';
+import * as firebase from 'firebase';
 
 dotenv.config();
 
@@ -31,6 +32,41 @@ export function articlesFetched(response) {
     data,
   });
 }
+
+
+
+export function setFavourite(id, title, description, url, imageUrl, author, publishedAt) {
+  let userId = firebase.auth().currentUser.uid;
+  let newPostKey = firebase.database().ref('favourites').child(userId).push().key;
+  firebase.database().ref('favourites/' + userId + '/' + newPostKey).update({
+    id, title, description, url, urlToImage: imageUrl, author, publishedAt
+  });
+}
+
+
+
+export function getFavorites() {
+    let data = {};
+    let userId = firebase.auth().currentUser.uid;
+    let articlesArray = [];
+
+    firebase.database().ref('/favourites/' + userId).once('value').then((snapshot) => {
+      var articles = snapshot.val();
+        Object.keys(articles).forEach((postId) => {
+        var post = articles[postId];
+        articlesArray.push(post);
+      });
+    
+    data.articles = articlesArray;
+    dispatcher.dispatch({
+      type: 'ARTICLES_FETCHED',
+      data: data,
+    });
+
+   }).catch(console.log('cant fetch users favourites'));
+
+}
+
 
 /**
  * Broadcasts an Action that fetching fresh news articles has started. Then,

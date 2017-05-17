@@ -1,4 +1,6 @@
 import React from 'react';
+import * as ArticlesActions from '../actions/ArticlesActions';
+
 
 /**
  * This Component represents a single news article.
@@ -7,7 +9,7 @@ import React from 'react';
  * Otherwise, return null or false to prevent the rendering of this Component.
  */
 function Article(props) {
-  const { id, title, description, url, imageUrl, author, publishedAt } = props;
+  const { id, title, description, url, imageUrl, author, publishedAt, source } = props;
   const facebookShareLink = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
   const googleShareLink = `https://plus.google.com/share?url=${url}`;
   const encodedTitle = encodeURIComponent(title);
@@ -17,6 +19,10 @@ function Article(props) {
   let publishDate = '';
   if (publishedAt) {
     publishDate = publishedAt.split('T')[0];
+  }
+
+  let setFavourite = (id, title, description, url, imageUrl, author, publishedAt) => {
+    ArticlesActions.setFavourite(id, title, description, url, imageUrl, author, publishedAt);
   }
   return (
     <div
@@ -45,6 +51,9 @@ function Article(props) {
         <div>
           <div className="col-xs-12">
             <div className="btn-group pull-right">
+              <button onClick={() => {setFavourite(id, title, description, url, imageUrl, author, publishedAt)}} type="button" className="btn btn-primary">
+                Like
+              </button>
               <button
                 type="button" className="btn btn-success dropdown-toggle"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
