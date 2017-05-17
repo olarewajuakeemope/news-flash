@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import RootContainer from './components/RootContainer';
 import dotenv from 'dotenv';
 import * as firebase from 'firebase';
+import '../public/css/style.css';
 
 dotenv.config();
 

@@ -1,0 +1,103 @@
+$border-width: 2px;
+$site-black: #303030;
+$small-screen-size: 320px;
+$medium-screen-size: 600px;
+
+body {
+  width: 100%;
+  margin: 0;
+  background-color: #f9f9f9;
+
+  .full-horizontal-whitespace {
+    margin-bottom: 10%;
+  }
+
+  .half-horizontal-whitespace {
+    margin-bottom: 5%;
+  }
+
+  .quarter-horizontal-whitespace {
+    margin-bottom: 2.5%;
+  }
+
+  .carousel-caption {
+    background-color: rgba(256, 256, 256, 0.8);
+
+    h3, p {
+      color: $site-black;
+    }
+  }
+
+  #wrapper {
+    min-height: 90%;
+  }
+
+  #app-container {
+    box-shadow: 3px 3px 5x $site-black;
+    background-color: #fefefe;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    box-sizing: border-box;
+
+    #nav-container {
+      #search-sources-container {
+        div.input {
+          width: 95%;
+        }
+      }
+    }
+
+    #app-status-container {
+      margin-top: 1em;
+    }
+
+    #articles-container {
+      border-bottom: $border-width solid #ececec;
+      margin-bottom: 1em;
+    }
+
+    #sign-out-btn {
+      margin-right: 1em;
+    }
+
+    .article:first-child {
+      border-top: $border-width solid #dddddd;
+      margin-top: 2.5%;
+    }
+
+    .article:last-child {
+      border-bottom: 0;
+    }
+
+    .article {
+      border-bottom: $border-width solid #dddddd;
+      padding: 2%;
+      
+      .article-title {
+        display: block;
+        margin-bottom: 0.5em;
+        box-sizing: border-box;
+        color: #2fa4e7;
+        font-size: 1.8em;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        line-height: 1.2;
+      }
+
+      .article-description {
+        @media screen and (max-width: $small-screen-size) {
+          font-size: 1.5em;
+        }
+
+        @media screen and (max-width: $medium-screen-size) {
+          font-size: 1.3em;
+        }
+      }
+    }
+  }
+
+  // Means "for all div's that are direct children of #app-container and whose id's end with container".
+  > div[id$='container'] {
+    margin-top: 1em;
+  }
+}
