@@ -4,6 +4,7 @@ import SearchSources from './SearchSources';
 import * as ArticlesActions from '../actions/ArticlesActions';
 import dashboardStore from '../stores/DashboardStore';
 
+
 /**
  * A Component with a form that a user can use to search for or select
  * the news source and sort type that he/she wants to read.
