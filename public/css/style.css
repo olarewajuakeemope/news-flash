@@ -2,6 +2,11 @@ body {
   width: 100%;
   margin: 0;
   background-color: #f9f9f9; }
+  body .logo-25by25 {
+    width: 25px;
+    height: 25px;
+    padding-right: 5px;
+    padding-bottom: 5px; }
   body .full-horizontal-whitespace {
     margin-bottom: 10%; }
   body .half-horizontal-whitespace {

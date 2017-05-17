@@ -3,11 +3,18 @@ $site-black: #303030;
 $small-screen-size: 320px;
 $medium-screen-size: 600px;
 
+
 body {
   width: 100%;
   margin: 0;
   background-color: #f9f9f9;
 
+  .logo-25by25 {
+    width: 25px;
+    height: 25px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+  }
   .full-horizontal-whitespace {
     margin-bottom: 10%;
   }

@@ -35,11 +35,12 @@ class HomePageContainer extends Component {
         <div className="row">
           <div className="col-xs-12 col-md-6">
             <h4 className="alert alert-info text-center">
-              Please sign in using any of the options below.
+              Please sign in with google below.
             </h4>
-            <div id="firebaseui-auth-container" />
-             <button className="w3-btn w3-white w3-border w3-round-small" onClick={this.login.bind(this)}><img src="https://www.gstatic.com/firebasejs/ui/0.5.0/images/auth/google.svg" alt="google logo"/>Sign with Google</button>
+            <div className="text-center">
+             <button className="w3-btn w3-white w3-border w3-round-small" onClick={this.login.bind(this)}><img src="https://www.gstatic.com/firebasejs/ui/0.5.0/images/auth/google.svg" className="logo-25by25" alt="google logo"/>Sign with Google</button>
             </div>
+          </div>
           <div className="col-xs-12 col-md-6">
             <div id="home-page-slider" className="carousel slide" data-ride="carousel">
               <ol className="carousel-indicators">
