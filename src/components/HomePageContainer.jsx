@@ -9,7 +9,7 @@ class HomePageContainer extends Component {
     const auth = firebase.auth();
     auth.onAuthStateChanged(user => {
       if (user) {
-         window.location.replace('/dashboard');
+         this.props.history.push('/dashboard');
       } else {
          console.log('no user');
       }
