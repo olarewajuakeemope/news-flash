@@ -2,11 +2,18 @@ import React from 'react';
 import { Modal, Image, Header } from 'semantic-ui-react';
 import dashboardStore from '../stores/DashboardStore';
 
-
-
-
+/**
+ * This shows a modal dialog while the app retrieves a list of news sources and
+ * their various sort options. If the retrieval is successful, this Component
+ * hides itself. But if not, it shows an error message.
+ * @extends React.Component
+ */
 export default class LoadingSourcesModal extends React.Component {
-
+  /**
+   * Initializes this Component e.g sets it to being visible by default, adds
+   * listeners to relevant Store's etc.
+   * @constructor
+   */
   constructor() {
     super();
 
@@ -32,7 +39,10 @@ export default class LoadingSourcesModal extends React.Component {
     });
   }
 
-
+  /**
+   * @return {ReactComponent|null|false} - A Component for DOM rendering.
+   * Otherwise, return null or false to prevent the rendering of this Component.
+   */
   render() {
     return (
       <Modal open={this.state.open} basic dimmer size="fullscreen">

@@ -1,6 +1,11 @@
 import React from 'react';
 
-
+/**
+ * This Component represents a single news article.
+ * @param {Object} props - Data about this article like url, headline etc.
+ * @return {ReactComponent|null|false} - A Component for DOM rendering.
+ * Otherwise, return null or false to prevent the rendering of this Component.
+ */
 function Article(props) {
   const { id, title, description, url, imageUrl, author, publishedAt } = props;
   const facebookShareLink = `https://www.facebook.com/sharer/sharer.php?u=${url}`;

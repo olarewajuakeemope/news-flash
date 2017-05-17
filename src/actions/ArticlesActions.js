@@ -1,11 +1,14 @@
-
 import axios from 'axios';
 import dotenv from 'dotenv';
 import dispatcher from '../dispatcher/Dispatcher';
 
 dotenv.config();
 
-
+/**
+ * Broadcasts an Action when an attempt to retrieve news articles fails. The
+ * Action has a payload with details about the error.
+ * @param {Error} error - Data about the error that occurred e.g an error message.
+ */
 export function fetchArticlesFailed(error) {
   dispatcher.dispatch({
     type: 'FETCH_ARTICLES_FAILED',
@@ -14,7 +17,13 @@ export function fetchArticlesFailed(error) {
   });
 }
 
-
+/**
+ * Broadcasts an Action when a fresh batch of news articles has been
+ * successfully retrieved. The retrieved articles and other metadata
+ * are part of the Action's payload.
+ * @param {HTTPResponse} response - An Object that contains the retrieved
+ * articles and other metadata about the retrieval.
+ */
 export function articlesFetched(response) {
   const data = response.data;
   dispatcher.dispatch({
@@ -23,7 +32,16 @@ export function articlesFetched(response) {
   });
 }
 
-
+/**
+ * Broadcasts an Action that fetching fresh news articles has started. Then,
+ * it calls [articlesFetched()]{@link articlesFetched} or
+ * [fetchArticlesFailed()]{@link fetchArticlesFailed} based on the success
+ * or failure respectively of the fetch attempt.
+ * @param {String} sourceId - The ID of the news source desired e.g al-jazeera,
+ * bbc etc.
+ * @param {String} sort - The sort type of the articles to retrieve e.g latest,
+ * top etc.
+ */
 export function fetchArticles(sourceId, sort) {
   dispatcher.dispatch({
     type: 'FETCH_ARTICLES',
@@ -42,7 +60,11 @@ export function fetchArticles(sourceId, sort) {
     });
 }
 
-
+/**
+ * Broadcasts an Action that the news source ID in use by this app has changed.
+ * For example, if it was 'al-jazeera', this function can change it to 'bbc'.
+ * @param {String} newsSourceId - the ID of the new news source.
+ */
 export function changeNewsSource(newsSourceId) {
   dispatcher.dispatch({
     type: 'CHANGE_NEWS_SOURCE',
@@ -50,7 +72,12 @@ export function changeNewsSource(newsSourceId) {
   });
 }
 
-
+/**
+ * Broadcasts an Action that changes the sort type in use by
+ * this app. For example, if it was 'top', this function can
+ * change it to 'latest'.
+ * @param {String} sort - the new sort type.
+ */
 export function changeSort(sort) {
   dispatcher.dispatch({
     type: 'CHANGE_SORT',
@@ -58,7 +85,15 @@ export function changeSort(sort) {
   });
 }
 
-
+/**
+ * Broadcasts an Action when this app has successfully updated its list
+ * of news sources and the sort types available for each of them. The retrieved
+ * news sources, their individual sort types and other metadata are part 
+ * of the Action's payload.
+ * @param {HTTPResponse} response: An Object that contains data about the
+ * retrieved news sources, their sort types and other metadata about the
+ * retrieval.
+ */
 export function sourcesFetched(response) {
   dispatcher.dispatch({
     type: 'SOURCES_FETCHED',
@@ -66,7 +101,10 @@ export function sourcesFetched(response) {
   });
 }
 
-
+/**
+ * Broadcasts an Action when an attempt to update this app's list of news
+ * sources fails.
+ */
 export function fetchSourcesFailed() {
   dispatcher.dispatch({
     type: 'FETCH_SOURCES_FAILED',
@@ -74,7 +112,12 @@ export function fetchSourcesFailed() {
   });
 }
 
-
+/**
+ * Broadcasts an Action that an update to this app's list of news sources
+ * has started. Then, it calls [sourcesFetched()]{@link sourcesFetched} or
+ * [fetchSourcesFailed()]{@link fetchSourcesFailed} based on the success
+ * or failure respectively of that attempt.
+ */
 export function fetchSources() {
   dispatcher.dispatch({
     type: 'FETCH_SOURCES',

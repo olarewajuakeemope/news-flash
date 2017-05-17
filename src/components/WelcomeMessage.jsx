@@ -1,9 +1,17 @@
 import React from 'react';
 import welcomeMessageStore from '../stores/WelcomeMessageStore';
 
-
+/**
+ * This Component shows some elements that welcome a user to the dashboard
+ * and onboard them properly e.g a splash image with a welcome message.
+ * @extends React.Component
+ */
 export default class WelcomeMessageContainer extends React.Component {
-
+  /**
+   * Sets up this Component with some default attributes e.g hide or show
+   * this Component when appropriate.
+   * @constructor
+   */
   constructor() {
     super();
     this.state = {
@@ -17,7 +25,11 @@ export default class WelcomeMessageContainer extends React.Component {
     });
   }
 
-
+  /**
+   * Computes and returns a representation of this Component for rendering.
+   * @return {ReactComponent|null|false} - A Component for DOM rendering.
+   * Otherwise, return null or false to prevent the rendering of this Component.
+   */
   render() {
     const currentHtmlClasses = this.state.htmlClasses.join(' ');
     return (

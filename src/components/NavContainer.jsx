@@ -4,7 +4,13 @@ import FetchArticlesForm from './FetchArticlesForm';
 import * as ArticlesActions from '../actions/ArticlesActions';
 
 
-
+/**
+ * This Component contains the elements that make up the navigation bar e.g
+ * a button for signing out. It is only used on AuthenticatedRoutes i.e
+ * Routes that a user can only access if she/he is logged in.
+ * @return {ReactComponent|null|false} - A Component for DOM rendering.
+ * Otherwise, return null or false to prevent the rendering of this Component.
+ */
 export default function NavContainer() {
   ArticlesActions.fetchSources();
 

@@ -1,13 +1,20 @@
-
 import React from 'react';
 import uuid from 'uuid';
 import SearchSources from './SearchSources';
 import * as ArticlesActions from '../actions/ArticlesActions';
 import dashboardStore from '../stores/DashboardStore';
 
-
+/**
+ * A Component with a form that a user can use to search for or select
+ * the news source and sort type that he/she wants to read.
+ * @extends React.Component
+ */
 export default class FetchArticlesFormContainer extends React.Component {
- 
+  /**
+   * Initializes this Component e.g sets the list of news sources to an
+   * empty Array, adds listeners for pertinent Store's etc.
+   * @constructor
+   */
   constructor() {
     super();
 
@@ -84,22 +91,43 @@ export default class FetchArticlesFormContainer extends React.Component {
     });
   }
 
+  /**
+   * This fires an Action when a user chooses a different news source from
+   * this Component's dropdown menu.
+   * @param {SyntheticEvent} event - An object with data about the event e.g
+   * the DOM element on which it happened.
+   */
   handleChangeNewsSource(event) {
     const sourceId = event.target.value;
     this.state.sourceId = sourceId;
     ArticlesActions.changeNewsSource(sourceId);
   }
 
+  /**
+   * This fires an Action when a user chooses a new sort type from
+   * this Component's dropdown menu.
+   * @param {SyntheticEvent} event - An object with data about the event e.g
+   * the DOM element on which it happened.
+   */
   handleChangeSort(event) {
     const sortBy = event.target.value;
     this.state.sortBy = sortBy;
     ArticlesActions.changeSort(sortBy);
   }
 
+  /**
+   * This helps fire an Action when a user clicks the button for fetching
+   * more news articles.
+   */
   handleFetchArticles() {
     ArticlesActions.fetchArticles(this.state.sourceId, this.state.sortBy);
   }
 
+  /**
+   * Computes and returns a representation of this Component for rendering.
+   * @return {ReactComponent|null|false} - A Component for DOM rendering.
+   * Otherwise, return null or false to prevent the rendering of this Component.
+   */
   render() {
     const newsSourcesOptions = this.state.newsSources.map(source =>
       <option

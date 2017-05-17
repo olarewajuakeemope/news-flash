@@ -1,9 +1,17 @@
 import React from 'react';
 import appStatusStore from '../stores/AppStatusStore';
 
-
+/**
+ * A Component for keeping a user informed of whether this app is
+ * loading data or has finished doing so.
+ * @extends React.Component
+ */
 export default class AppStatus extends React.Component {
-
+  /**
+   * Initializes this Component e.g adds listeners for changes in a Store,
+   * hides some elements by default etc.
+   * @constructor
+   */
   constructor() {
     super();
 
@@ -40,6 +48,11 @@ export default class AppStatus extends React.Component {
     });
   }
 
+  /**
+   * Computes and returns a representation of this Component for rendering.
+   * @return {ReactComponent|null|false} - A Component for DOM rendering.
+   * Otherwise, return null or false to prevent the rendering of this Component.
+   */
   render() {
     const showAppStatus = this.state.isSuccessFetch ? 'hidden' : '';
     const showLoadingImg = this.state.isFetching ? '' : 'hidden';
