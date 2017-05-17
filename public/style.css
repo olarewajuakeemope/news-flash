@@ -1,0 +1,56 @@
+body {
+  width: 100%;
+  margin: 0;
+  background-color: #f9f9f9; }
+  body .full-horizontal-whitespace {
+    margin-bottom: 10%; }
+  body .half-horizontal-whitespace {
+    margin-bottom: 5%; }
+  body .quarter-horizontal-whitespace {
+    margin-bottom: 2.5%; }
+  body .carousel-caption {
+    background-color: rgba(255, 255, 255, 0.8); }
+    body .carousel-caption h3, body .carousel-caption p {
+      color: #303030; }
+  body #wrapper {
+    min-height: 90%; }
+  body #app-container {
+    box-shadow: 3px 3px 5x #303030;
+    background-color: #fefefe;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    box-sizing: border-box; }
+    body #app-container #nav-container #search-sources-container div.input {
+      width: 95%; }
+    body #app-container #app-status-container {
+      margin-top: 1em; }
+    body #app-container #articles-container {
+      border-bottom: 2px solid #ececec;
+      margin-bottom: 1em; }
+    body #app-container #sign-out-btn {
+      margin-right: 1em; }
+    body #app-container .article:first-child {
+      border-top: 2px solid #dddddd;
+      margin-top: 2.5%; }
+    body #app-container .article:last-child {
+      border-bottom: 0; }
+    body #app-container .article {
+      border-bottom: 2px solid #dddddd;
+      padding: 2%; }
+      body #app-container .article .article-title {
+        display: block;
+        margin-bottom: 0.5em;
+        box-sizing: border-box;
+        color: #2fa4e7;
+        font-size: 1.8em;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        line-height: 1.2; }
+      @media screen and (max-width: 320px) {
+        body #app-container .article .article-description {
+          font-size: 1.5em; } }
+      @media screen and (max-width: 600px) {
+        body #app-container .article .article-description {
+          font-size: 1.3em; } }
+  body > div[id$='container'] {
+    margin-top: 1em; }
