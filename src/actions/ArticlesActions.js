@@ -34,7 +34,6 @@ export function articlesFetched(response) {
 }
 
 
-
 export function setFavourite(id, title, description, url, imageUrl, author, publishedAt) {
   let userId = firebase.auth().currentUser.uid;
   let newPostKey = firebase.database().ref('favourites').child(userId).push().key;
