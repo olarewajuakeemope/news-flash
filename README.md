@@ -22,7 +22,7 @@ great, responsive UI. To see a live version of this project, please visit [this 
 
 ## Tech stack
 
-This project uses a host of modern technologies. The core ones are:
+This project uses a host of modern technologies. The core ones are: 
 - ECMAScript 6: Also known as ES2015, this is the newest version of Javascript with 
 next-generation features like arrow functions, generators, enhanced object literals, 
 spread operators and more. See [this link](https://en.wikipedia.org/wiki/ECMAScript) for details.
