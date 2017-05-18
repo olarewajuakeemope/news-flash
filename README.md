@@ -31,7 +31,7 @@ spread operators and more. See [this link](https://en.wikipedia.org/wiki/ECMAScr
 on Chrome's V8 JavaScript engine. It is lightweight, efficient and greatly used in building 
 web apps. Please visit [this link](https://nodejs.org) for more details.
 
-- [React](https://facebook.github.io/react/) and [ReactDOM](https://facebook.github.io/react/docs/react-dom.html):  
+- [React](https://facebook.github.io/react/) and [ReactDOM](https://facebook.github.io/react/docs/react-dom.html): 
 These were developed by Facebook and are used for building web pages that are structured as a collection of 
 components. These components are kept as independent as possible. See [this link](https://facebook.github.io/react/).
 
