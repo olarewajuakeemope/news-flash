@@ -14,7 +14,13 @@
     "semantic-ui-react": "^0.68.3"
   },
   "devDependencies": {
-    "react-scripts": "0.9.5"
+    "chai": "^3.5.0",
+    "chai-enzyme": "^0.6.1",
+    "cheerio": "^0.22.0",
+    "enzyme": "^2.8.2",
+    "react-addons-test-utils": "^15.5.1",
+    "react-scripts": "0.9.5",
+    "sinon": "^2.2.0"
   },
   "scripts": {
     "build-css": "node-sass public/css -o public/css",

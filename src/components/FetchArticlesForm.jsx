@@ -16,6 +16,7 @@ export default class FetchArticlesFormContainer extends React.Component {
    * empty Array, adds listeners for pertinent Store's etc.
    * @constructor
    */
+   
   constructor() {
     super();
 
