@@ -17,6 +17,7 @@
     "chai": "^3.5.0",
     "chai-enzyme": "^0.6.1",
     "cheerio": "^0.22.0",
+    "coveralls": "^2.13.1",
     "enzyme": "^2.8.2",
     "react-addons-test-utils": "^15.5.1",
     "react-scripts": "0.9.5",
@@ -28,6 +29,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "eject": "react-scripts eject"
   }
 }
