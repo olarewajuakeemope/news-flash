@@ -12,6 +12,7 @@
 # misc
 .DS_Store
 .env
+/.nyc_output
 .coveralls.yml
 npm-debug.log*
 yarn-debug.log*

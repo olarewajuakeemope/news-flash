@@ -1,14 +1,6 @@
 language: node_js
-
 node_js:
-  - 6.10.1
   - 6.10.2
+test: "npm test -- --coverage"
 
-before_script:
-  - npm install
-
-script: 
-  - npm test
-
-after_script:
-  - cat ./coverage/lcov.info | ./node_modules/.bin/coveralls
+after_success: "cat ./coverage/lcov.info | coveralls"
