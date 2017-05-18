@@ -29,7 +29,8 @@
     "watch-css": "npm run build-css && node-sass public/css -o public/ --watch --recursive",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom && codecov --token=GhfxRR0e7Cl8EvO7J0ue6V9LZ8bW9Zmle",
+    "test": "react-scripts test --env=jsdom",
+    "coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
     "eject": "react-scripts eject"
   }
 }
