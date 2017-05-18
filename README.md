@@ -70,16 +70,20 @@ a Firebase project. You will need your firebase config details to run the applic
 
 - **Configure the project with your firebase config details**: In the root of this project, create a .env file. Then add config details as follows:
 
+```bash
 REACT_APP_API_KEY="your-firebase-api-key"
 REACT_APP_AUTH_DOMAIN="your-firebase-auth-domain-here"
 REACT_APP_DATABASE_URL="your-firebase-database-url-here"
 REACT_APP_PROJECT_ID="your-firebase-projectID-here"
 REACT_APP_STORAGE_BUCKET="your-firebase-storage-bucket-here"
 REACT_APP_MESSAGING_SENDER_ID="your-firebase-messaging-senderID-here"
+```
 
 - **Get a NewsAPI key**: You will need to get an api key from [newsap.org](https://newsapi.org). Then append .env file with oyur api key as follows:
 
+```bash
 REACT_APP_NEWS_API_KEY="your-newsapi-key-here"
+```
 
 - **Run the project**: This will run the project on your computer so that you can browse it yourself. In the 
 terminal/command prompt, enter the following command:
