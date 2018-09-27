@@ -5,7 +5,7 @@
 
 # Welcome
 
-Welcome to News Flash! This project gives you access to high quality, cutting edge news from 
+News Flash! This project gives you access to high quality, cutting edge news from 
 sources worldwide. It is also designed to be intuitive and easy to use, all with a 
 great, responsive UI. To see a live version of this project, please visit [this link](https://newsapi-cp1.herokuapp.com/).
 
